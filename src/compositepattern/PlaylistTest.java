@@ -31,5 +31,25 @@ class PlaylistTest {
 			index++;
 		}
 	}
+	
+	@Test 
+	void speedTest() {
+		Playlist experimentalPlaylist = new Playlist("Experimental");		
+		Song experimentalSong1 = new Song("About you", "XXYYXX");
+		Song experimentalSong2 = new Song("Motivation", "Clams Casino");
+		
+		experimentalPlaylist.add(experimentalSong1);
+		experimentalPlaylist.add(experimentalSong2);
+		
+		experimentalPlaylist.setPlaybackSpeed(1.5f);
+		
+		Iterator<IComponent> i = experimentalPlaylist.getPlaylist().iterator();
+		
+		while (i.hasNext()) {
+			IComponent c = i.next();
+			System.out.println(((Song) c).getSpeed() == 1.5f);
+			assertEquals(1.5f, ((Song) i.next()).getSpeed(),0);
+		}
+	}
 
 }

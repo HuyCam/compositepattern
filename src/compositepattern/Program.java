@@ -143,9 +143,16 @@ class Song implements IComponent {
 
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
 		System.out.println("PLaying " + songName + " song");
 		
+	}
+
+	public float getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(float speed) {
+		this.speed = speed;
 	}
 
 	@Override
@@ -165,7 +172,4 @@ class Song implements IComponent {
 	public void setArtist(String artist) {
 		this.artist = artist;
 	}
-	
-	
-	
 }
